@@ -3,7 +3,9 @@
 
 ## Essential linux binaries
 fzf
+
 zoxide
+
 bat
 
 
