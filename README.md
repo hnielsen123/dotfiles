@@ -13,6 +13,7 @@ bat
 
 ### Init zoxide and alias to cd / cdi:
 eval "$(zoxide init --cmd cd bash)" [for bash]
+
 eval "$(zoxide init --cmd cd zsh)" [for zsh]
 
 ### Enable mouse scroll in less:
