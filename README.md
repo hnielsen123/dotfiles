@@ -37,20 +37,31 @@ eval "$(zoxide init --cmd cd zsh)" [for zsh]
 ## Steps for install
 
 sudo apt install bat
+
 sudo apt install fzf
+
 curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 
+
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 git clone https://github.com/hnielsen123/dotfiles.git
 
+
 cd ~
+
 sudo cp dotfiles/.tmux.conf .
+
 sudo cp dotfiles/.vimrc .
 
+
 source .bashrc
+
 tmux source .tmux.conf
 
+
 tmux, Ctrl+b, Shift+i to activate tpm and tmux plugins.
+
 
 
 
