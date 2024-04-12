@@ -42,13 +42,15 @@ sudo apt install fzf
 
 curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 
+cd ~
+
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 git clone https://github.com/hnielsen123/dotfiles.git
 
 
-cd ~
+
 
 sudo cp dotfiles/.tmux.conf .
 
@@ -61,6 +63,12 @@ tmux source .tmux.conf
 
 
 tmux, Ctrl+b, Shift+i to activate tpm and tmux plugins.
+
+If: vim sorbet theme not installed and/or vim line highlighting doesn't work, comment out relevant line(s) in .vimrc
+
+Add (hostname) to the "status left" part of ~/.tmux/plugins/tokyo-night-tmux/tokyo-night.tmux
+
+
 
 
 
