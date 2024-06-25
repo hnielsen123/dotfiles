@@ -8,10 +8,26 @@ zoxide
 
 bat
 
+## Install NerdFont 
+
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip (might change as it gets updated)
+
+mkdir FiraCode
+
+unzip ./FiraCode.zip -d ./FiraCode/
+
+sudo mv ./FiraCode/* /usr/local/share/fonts
+
+fc-cache -f -v
+
+#### In Windows Terminal, this seems to work automatically after this. In Kali, you need to:
+
+vim ~/.config/qterminal.org/qterminal.ini
+
+Change `fontFamily` from `FiraCode`/`Fira Code` to `FiraCode Nerd Font`, then in qterminal settings change the font to FiraCode Nerd Font
 
 
-
-## Essential adds to .bashrc (when you can't copy you own)
+## Essential adds to .bashrc/.zshrc (when you can't copy you own)
 
 ### Add .local/bin to path
 export PATH=$PATH:$HOME/.local/bin
@@ -40,7 +56,10 @@ sudo apt install bat
 
 sudo apt install fzf
 
-curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash [for bash]
+
+curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | zsh [for zsh]
+
 
 cd ~
 
