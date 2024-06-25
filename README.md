@@ -27,7 +27,7 @@ vim ~/.config/qterminal.org/qterminal.ini
 Change `fontFamily` from `FiraCode`/`Fira Code` to `FiraCode Nerd Font`, then in qterminal settings change the font to FiraCode Nerd Font
 
 
-## Essential adds to .bashrc/.zshrc (when you can't copy you own)
+## Essential adds to .bashrc/.zshrc (when you can't copy your own)
 
 ### Add .local/bin to path
 export PATH=$PATH:$HOME/.local/bin
@@ -76,7 +76,9 @@ sudo cp dotfiles/.tmux.conf .
 sudo cp dotfiles/.vimrc .
 
 
-source .bashrc
+source .bashrc [for bash]
+
+source .zshrc [for zsh]
 
 tmux source .tmux.conf
 
