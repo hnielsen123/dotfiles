@@ -14,6 +14,7 @@ starship
 
 ### 1. Install NerdFont 
 
+#### For Linux (WSL or VM)
 `wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip` (might change as it gets updated)
 
 `mkdir FiraCode`
@@ -24,11 +25,20 @@ starship
 
 `fc-cache -f -v`
 
-#### In Windows Terminal, this seems to work automatically after this. In Kali, you need to:
+For Kali (not sure if necessary in Ubuntu VM/WSL):
 
 `vim ~/.config/qterminal.org/qterminal.ini`
 
 Change `fontFamily` from `FiraCode`/`Fira Code` to `FiraCode Nerd Font`, then in qterminal settings change the font to FiraCode Nerd Font
+
+#### For Windows (Powershell + SSH into linux machines from Windows)
+
+https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/CascadiaMono.zip
+
+Unzip, copy to C:\Windows\Fonts
+
+Change in Windows Terminal -> Settings -> Defaults -> Font face to Caskaydia Nerd Font Mono
+
 
 ### 2. Install and configure binaries 
 
