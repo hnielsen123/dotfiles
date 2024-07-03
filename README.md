@@ -10,7 +10,9 @@ bat
 
 starship
 
-## Install NerdFont 
+## Steps for install
+
+### 1. Install NerdFont 
 
 `wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip` (might change as it gets updated)
 
@@ -28,8 +30,36 @@ starship
 
 Change `fontFamily` from `FiraCode`/`Fira Code` to `FiraCode Nerd Font`, then in qterminal settings change the font to FiraCode Nerd Font
 
+## 2. Install and configure binaries 
 
-## Essential adds to .bashrc/.zshrc (when you can't copy your own)
+`sudo apt install bat`
+
+`sudo apt install fzf`
+
+`curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash` [for bash]
+
+`curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | zsh` [for zsh]
+
+`curl -sS https://starship.rs/install.sh | sh`
+
+
+`cd ~`
+
+
+`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+
+`git clone https://github.com/hnielsen123/dotfiles.git`
+
+
+
+
+`sudo cp dotfiles/.tmux.conf .`
+
+`sudo cp dotfiles/.vimrc .`
+
+`sudo cp -R dotfiles/.config .`
+
+## Add the following to .zshrc / .bashrc
 
 ### Enable Vim keybinds in shell prompt
 
@@ -63,44 +93,16 @@ eval "$(starship init bash)" [for bash]
 
 eval "$(starship init zsh)" [for zsh]
 
-
-## Steps for install
-
-`sudo apt install bat`
-
-`sudo apt install fzf`
-
-`curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash` [for bash]
-
-`curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | zsh` [for zsh]
-
-`curl -sS https://starship.rs/install.sh | sh`
-
-
-`cd ~`
-
-
-`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-
-`git clone https://github.com/hnielsen123/dotfiles.git`
-
-
-
-
-`sudo cp dotfiles/.tmux.conf .`
-
-`sudo cp dotfiles/.vimrc .`
-
-`sudo cp -R dotfiles/.config .`
-
-Add changes from above section to .bashrc / .zshrc
-
+### Put changes into effect
 `source .bashrc` [for bash]
 
 `source .zshrc` [for zsh]
 
-`tmux source .tmux.conf`
+## 4. Configure tmux
 
+`tmux`
+
+`tmux source .tmux.conf`
 
 `tmux`, Ctrl+b, Shift+i to activate tpm and tmux plugins.
 
