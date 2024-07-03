@@ -30,7 +30,7 @@ starship
 
 Change `fontFamily` from `FiraCode`/`Fira Code` to `FiraCode Nerd Font`, then in qterminal settings change the font to FiraCode Nerd Font
 
-## 2. Install and configure binaries 
+### 2. Install and configure binaries 
 
 `sudo apt install bat`
 
@@ -59,46 +59,46 @@ Change `fontFamily` from `FiraCode`/`Fira Code` to `FiraCode Nerd Font`, then in
 
 `sudo cp -R dotfiles/.config .`
 
-## Add the following to .zshrc / .bashrc
+### Add the following to .zshrc / .bashrc
 
-### Enable Vim keybinds in shell prompt
+#### Enable Vim keybinds in shell prompt
 
 set -o vi [for bash]
 
 change `bindkey -e` to `bindkey -v` [for zsh]
 
-### Add .local/bin to path
+#### Add .local/bin to path
 export PATH=$PATH:$HOME/.local/bin
 
-### Enable mouse scroll in less:
+#### Enable mouse scroll in less:
 export LESS="--mouse --wheel-lines=3"
 
-### Set vim as default editor:
+#### Set vim as default editor:
 export EDITOR="/usr/bin/vim" [may need to double check path based on distro]
 
-### Best ls alias:
+#### Best ls alias:
 alias ls="ls -alhF --color=auto"
 
-### Enable tmux color:
+#### Enable tmux color:
 alias tmux="TERM=xterm-256color tmux"
 
-### Init zoxide and alias to cd / cdi:
+#### Init zoxide and alias to cd / cdi:
 eval "$(zoxide init --cmd cd bash)" [for bash]
 
 eval "$(zoxide init --cmd cd zsh)" [for zsh]
 
-### Init starship
+#### Init starship
 
 eval "$(starship init bash)" [for bash]
 
 eval "$(starship init zsh)" [for zsh]
 
-### Put changes into effect
+#### Put changes into effect
 `source .bashrc` [for bash]
 
 `source .zshrc` [for zsh]
 
-## 4. Configure tmux
+### 4. Configure tmux
 
 `tmux`
 
