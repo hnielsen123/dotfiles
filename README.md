@@ -59,7 +59,7 @@ Change `fontFamily` from `FiraCode`/`Fira Code` to `FiraCode Nerd Font`, then in
 
 `sudo cp -R dotfiles/.config .`
 
-### Add the following to .zshrc / .bashrc
+### 3. Add the following to .zshrc / .bashrc
 
 #### Enable Vim keybinds in shell prompt
 
