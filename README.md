@@ -104,7 +104,9 @@ eval "$(starship init zsh)" [for zsh]
 
 `tmux source .tmux.conf`
 
-`tmux`, Ctrl+b, Shift+i to activate tpm and tmux plugins.
+Ctrl+b, Shift+i to activate tpm and tmux plugins.
+
+Exit tmux, then `tmux` to start a new session and make sure everything is initiated correctly
 
 If: vim sorbet theme not installed and/or vim line highlighting doesn't work, comment out relevant line(s) in .vimrc
 
