@@ -12,10 +12,10 @@ starship
 
 ## Steps for install
 
-### 1. Install NerdFont 
+### 1. Install NerdFont (for headless machines this is only necessary on the host, not the machine you're SSHing into)
 
 #### For Linux (WSL or VM)
-`wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip` (might change as it gets updated)
+`wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.zip` (might change as it gets updated)
 
 `mkdir FiraCode`
 
@@ -33,7 +33,7 @@ Change `fontFamily` from `FiraCode`/`Fira Code` to `FiraCode Nerd Font`, then in
 
 #### For Windows (Powershell + SSH into linux machines from Windows)
 
-https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/CascadiaMono.zip
+https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaMono.zip
 
 Unzip, copy to C:\Windows\Fonts
 
@@ -46,9 +46,7 @@ Change in Windows Terminal -> Settings -> Defaults -> Font face to Caskaydia Ner
 
 `sudo apt install fzf`
 
-`curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash` [for bash]
-
-`curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | zsh` [for zsh]
+`curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh`
 
 `curl -sS https://starship.rs/install.sh | sh`
 
@@ -71,7 +69,7 @@ Change in Windows Terminal -> Settings -> Defaults -> Font face to Caskaydia Ner
 
 ### 3. Add the following to .zshrc / .bashrc
 
-#### Enable Vim keybinds in shell prompt
+#### Enable Vim keybinds in shell prompt (optional)
 
 set -o vi [for bash]
 
@@ -120,7 +118,7 @@ Exit tmux, then `tmux` to start a new session and make sure everything is initia
 
 If: vim sorbet theme not installed and/or vim line highlighting doesn't work, comment out relevant line(s) in .vimrc
 
-Add (hostname) to the "status left" part of ~/.tmux/plugins/tokyo-night-tmux/tokyo-night.tmux
+Add (hostname) to the "status left" part of ~/.tmux/plugins/tokyo-night-tmux/tokyo-night.tmux (change `#S$hostname` to `#(hostname)`
 
 
 
