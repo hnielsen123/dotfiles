@@ -20,6 +20,9 @@ set number
 " Hightlight cursor line underneath the cursor horizontally.
 set cursorline
 
+" Enable mouse compatibility
+set mouse=a
+
 " Set table width to 4 columns
 set tabstop=4
 
