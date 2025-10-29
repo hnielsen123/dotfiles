@@ -18,7 +18,8 @@ syntax on
 set number
 
 " Hightlight cursor line underneath the cursor horizontally.
-set cursorline
+" Doesn't work in Ubuntu for some reason, so commenting out by default
+"set cursorline
 
 " Enable mouse compatibility
 set mouse=a
@@ -37,7 +38,10 @@ set showmode
 set history=1000
 
 " Theme
-colorscheme sorbet
+" I prefer sorbet, but doesn't work in Ubuntu for some reason, so 
+" setting default to evening
+"colorscheme sorbet
+colorscheme evening
 
 " Transparent background
 hi Normal ctermbg=NONE guibg=NONE
