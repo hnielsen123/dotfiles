@@ -15,25 +15,39 @@ starship
 ### 1. Install NerdFont (for headless machines this is only necessary on the host, not the machine you're SSHing into)
 
 #### For Linux (WSL or VM)
-`wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.zip` (might change as it gets updated)
+```bash
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.zip
+```
+(might change as it gets updated)
 
-`mkdir FiraCode`
+```bash
+mkdir FiraCode
+```
 
-`unzip ./FiraCode.zip -d ./FiraCode/`
+```bash
+unzip ./FiraCode.zip -d ./FiraCode/
+```
 
-`sudo mv ./FiraCode/* /usr/local/share/fonts`
+```bash
+sudo mv ./FiraCode/* /usr/local/share/fonts
+```
 
-`fc-cache -f -v`
+```bash
+fc-cache -f -v
+```
 
 For Kali (not sure if necessary in Ubuntu VM/WSL):
 
-`vim ~/.config/qterminal.org/qterminal.ini`
+```bash
+vim ~/.config/qterminal.org/qterminal.ini
+```
 
 Change `fontFamily` from `FiraCode`/`Fira Code` to `FiraCode Nerd Font`, then in qterminal settings change the font to FiraCode Nerd Font
 
 #### For Windows (Powershell + SSH into linux machines from Windows)
-
+```
 https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaMono.zip
+```
 
 Unzip, copy to C:\Windows\Fonts
 
@@ -42,83 +56,136 @@ Change in Windows Terminal -> Settings -> Defaults -> Font face to Caskaydia Ner
 
 ### 2. Install and configure binaries 
 
-`sudo apt install bat`
+```bash
+sudo apt install bat
+```
 
-`sudo apt install fzf`
+```bash
+sudo apt install fzf
+```
 
-`curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh`
+```bash
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+```
 
-`curl -sS https://starship.rs/install.sh | sh`
-
-
-`cd ~`
-
-
-`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-
-`git clone https://github.com/hnielsen123/dotfiles.git`
-
-
+```bash
+curl -sS https://starship.rs/install.sh | sh
+```
 
 
-`sudo cp dotfiles/.tmux.conf .`
+```bash
+cd ~
+```
 
-`sudo cp dotfiles/.vimrc .`
 
-`sudo cp -R dotfiles/.config .`
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+```bash
+git clone https://github.com/hnielsen123/dotfiles.git
+```
+
+
+```bash
+sudo cp dotfiles/.tmux.conf .
+```
+
+```bash
+sudo cp dotfiles/.vimrc .
+```
+
+```bash
+sudo cp -R dotfiles/.config .
+```
 
 ### 3. Add the following to .zshrc / .bashrc
 
-#### Enable Vim keybinds in shell prompt (optional)
+*If vim sorbet theme not installed and/or vim line highlighting doesn't work, comment out relevant line(s) in .vimrc*
+
+#### Enable Vim keybinds in shell prompt (optional, I don't actually like this very much)
 
 set -o vi [for bash]
 
 change `bindkey -e` to `bindkey -v` [for zsh]
 
 #### Add .local/bin to path
+```bash
 export PATH=$PATH:$HOME/.local/bin
+```
 
 #### Enable mouse scroll in less:
+```bash
 export LESS="--mouse --wheel-lines=3"
+```
 
 #### Set vim as default editor:
-export EDITOR="/usr/bin/vim" [may need to double check path based on distro]
+```bash
+export EDITOR="/usr/bin/vim"
+```
+[may need to double check path based on distro]
 
 #### Best ls alias:
+```bash
 alias ls="ls -alhF --color=auto"
+```
 
 #### Enable tmux color:
+```bash
 alias tmux="TERM=xterm-256color tmux"
+```
 
 #### Init zoxide and alias to cd / cdi:
-eval "$(zoxide init --cmd cd bash)" [for bash]
+[for bash]
+```bash
+eval "$(zoxide init --cmd cd bash)"
+```
 
-eval "$(zoxide init --cmd cd zsh)" [for zsh]
+[for zsh]
+```
+eval "$(zoxide init --cmd cd zsh)"
+```
 
 #### Init starship
+[for bash]
+```bash
+eval "$(starship init bash)" 
+```
 
-eval "$(starship init bash)" [for bash]
+[for zsh]
+```bash
+eval "$(starship init zsh)" 
+```
 
-eval "$(starship init zsh)" [for zsh]
 
 #### Put changes into effect
-`source .bashrc` [for bash]
+[for bash]
+```bash
+source .bashrc
+```
 
-`source .zshrc` [for zsh]
+[for zsh] 
+```bash
+source .zshrc
+``` 
 
 ### 4. Configure tmux
 
-`tmux`
+```bash
+tmux
+```
 
-`tmux source .tmux.conf`
+```bash
+tmux source .tmux.conf
+```
 
-Ctrl+b, Shift+i to activate tpm and tmux plugins.
+- Ctrl+b, Shift+i to activate tpm and tmux plugins.
 
-Exit tmux, then `tmux` to start a new session and make sure everything is initiated correctly
+- Exit tmux, then `tmux` to start a new session and make sure everything is initiated correctly
 
-If: vim sorbet theme not installed and/or vim line highlighting doesn't work, comment out relevant line(s) in .vimrc
+- Comment out the "status left" part of `~/.tmux/plugins/tokyo-night-tmux/tokyo-night.tmux`, instead add `tmux set -g status-left "#[fg=${THEME[foreground]},bg=${THEME[black]}] #{?client_prefix,󰠠 ,#[dim]󰤂 }#[nodim]#(hostname) "`
 
-Add (hostname) to the "status left" part of ~/.tmux/plugins/tokyo-night-tmux/tokyo-night.tmux (change `#S$hostname` to `#(hostname)`
+- In `~/.tmux/plugins/tokyo-night-tmux/src/themes.sh`, go the the default/night theme at the bottom and change `["foreground"]="#a9b1d6"` to `["foreground"]="#f2f2f2"`
 
 
 
