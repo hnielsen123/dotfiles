@@ -178,23 +178,25 @@ source .zshrc
 ``` 
 
 ### 4. Configure tmux
-
-- Comment out the "status left" part of `~/.tmux/plugins/tokyo-night-tmux/tokyo-night.tmux`, instead add
-  ```bash
-  tmux set -g status-left "#[fg=${THEME[foreground]},bg=${THEME[black]}] #{?client_prefix,󰠠 ,#[dim]󰤂 }#[nodim]#(hostname) "
-  ```
-- In `~/.tmux/plugins/tokyo-night-tmux/src/themes.sh`, go the the default/night theme at the bottom and change `["foreground"]="#a9b1d6"` to `["foreground"]="#f2f2f2"`
   
-- ```bash
-  tmux
-  ```
-  ```bash
-  tmux source .tmux.conf
-  ```
+```bash
+tmux
+```
 
-- Ctrl+b, Shift+i to activate tpm and tmux plugins.
+```bash
+tmux source .tmux.conf
+```
 
-- Exit tmux, then `tmux` to start a new session and make sure everything is initiated correctly
+Ctrl+b, Shift+i to activate tpm and tmux plugins.
+
+Comment out the "status left" part of `~/.tmux/plugins/tokyo-night-tmux/tokyo-night.tmux`, instead add
+```bash
+tmux set -g status-left "#[fg=${THEME[foreground]},bg=${THEME[black]}] #{?client_prefix,󰠠 ,#[dim]󰤂 }#[nodim]#(hostname) "
+```
+
+In `~/.tmux/plugins/tokyo-night-tmux/src/themes.sh`, go the the default/night theme at the bottom and change `["foreground"]="#a9b1d6"` to `["foreground"]="#f2f2f2"`
+
+Exit tmux, then `tmux` to start a new session and make sure everything is initiated correctly
 
 
 
