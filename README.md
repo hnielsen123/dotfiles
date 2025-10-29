@@ -57,11 +57,7 @@ Change in Windows Terminal -> Settings -> Defaults -> Font face to Caskaydia Ner
 ### 2. Install and configure binaries 
 
 ```bash
-sudo apt install bat
-```
-
-```bash
-sudo apt install fzf
+sudo apt install bat fzf
 ```
 
 ```bash
@@ -101,7 +97,6 @@ sudo cp -R dotfiles/.config .
 
 ### 3. Add the following to .zshrc / .bashrc
 
-*If vim sorbet theme not installed and/or vim line highlighting doesn't work, comment out relevant line(s) in .vimrc*
 
 #### Enable Vim keybinds in shell prompt (optional, I don't actually like this very much)
 
