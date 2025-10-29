@@ -84,15 +84,15 @@ git clone https://github.com/hnielsen123/dotfiles.git
 
 
 ```bash
-sudo cp dotfiles/.tmux.conf .
+cp dotfiles/.tmux.conf .
 ```
 
 ```bash
-sudo cp dotfiles/.vimrc .
+cp dotfiles/.vimrc .
 ```
 
 ```bash
-sudo cp -R dotfiles/.config .
+cp -R dotfiles/.config .
 ```
 
 ### 3. Add the following to .zshrc / .bashrc
