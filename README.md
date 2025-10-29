@@ -104,6 +104,16 @@ set -o vi [for bash]
 
 change `bindkey -e` to `bindkey -v` [for zsh]
 
+#### Best ls alias:
+```bash
+alias ls="ls -alhF --color=auto"
+```
+
+#### Enable tmux color:
+```bash
+alias tmux="TERM=xterm-256color tmux"
+```
+
 #### Add .local/bin to path
 ```bash
 export PATH=$PATH:$HOME/.local/bin
@@ -120,14 +130,16 @@ export EDITOR="/usr/bin/vim"
 ```
 [may need to double check path based on distro]
 
-#### Best ls alias:
+
+#### Init starship
+[for bash]
 ```bash
-alias ls="ls -alhF --color=auto"
+eval "$(starship init bash)" 
 ```
 
-#### Enable tmux color:
+[for zsh]
 ```bash
-alias tmux="TERM=xterm-256color tmux"
+eval "$(starship init zsh)" 
 ```
 
 #### Init zoxide and alias to cd / cdi:
@@ -141,17 +153,18 @@ eval "$(zoxide init --cmd cd bash)"
 eval "$(zoxide init --cmd cd zsh)"
 ```
 
-#### Init starship
-[for bash]
+Example full addition to .bashrc:
 ```bash
+alias ls="ls -alhF --color=auto"
+alias tmux="TERM=xterm-256color tmux"
+
+export PATH=$PATH:$HOME/.local/bin
+export LESS="--mouse --wheel-lines=3"
+export EDITOR="/usr/bin/vim"
+
 eval "$(starship init bash)" 
+eval "$(zoxide init --cmd cd bash)"
 ```
-
-[for zsh]
-```bash
-eval "$(starship init zsh)" 
-```
-
 
 #### Put changes into effect
 [for bash]
@@ -166,21 +179,26 @@ source .zshrc
 
 ### 4. Configure tmux
 
-```bash
-tmux
-```
-
-```bash
-tmux source .tmux.conf
-```
+- Comment out the "status left" part of `~/.tmux/plugins/tokyo-night-tmux/tokyo-night.tmux`, instead add
+  ```bash
+  tmux set -g status-left "#[fg=${THEME[foreground]},bg=${THEME[black]}] #{?client_prefix,󰠠 ,#[dim]󰤂 }#[nodim]#(hostname) "
+  ```
+- In `~/.tmux/plugins/tokyo-night-tmux/src/themes.sh`, go the the default/night theme at the bottom and change `["foreground"]="#a9b1d6"` to `["foreground"]="#f2f2f2"`
+  
+- ```bash
+  tmux
+  ```
+  ```bash
+  tmux source .tmux.conf
+  ```
 
 - Ctrl+b, Shift+i to activate tpm and tmux plugins.
 
 - Exit tmux, then `tmux` to start a new session and make sure everything is initiated correctly
 
-- Comment out the "status left" part of `~/.tmux/plugins/tokyo-night-tmux/tokyo-night.tmux`, instead add `tmux set -g status-left "#[fg=${THEME[foreground]},bg=${THEME[black]}] #{?client_prefix,󰠠 ,#[dim]󰤂 }#[nodim]#(hostname) "`
 
-- In `~/.tmux/plugins/tokyo-night-tmux/src/themes.sh`, go the the default/night theme at the bottom and change `["foreground"]="#a9b1d6"` to `["foreground"]="#f2f2f2"`
+
+
 
 
 
