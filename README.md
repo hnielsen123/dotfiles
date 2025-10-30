@@ -215,13 +215,13 @@ source .zshrc
 
 #### Nice to haves for root (for anytime you need to sudo su)
 ```bash
-sudo echo 'alias ls="ls -alhF --color=auto"' >> /root/.bashrc
+echo -e '\nalias ls="ls -alhF --color=auto"' | sudo tee -a /root/.bashrc > /dev/null
 ```
 ```bash
-sudo echo 'export LESS="--mouse --wheel-lines=3"' >> /root/.bashrc
+echo -e '\nexport LESS="--mouse --wheel-lines=3"' | sudo tee -a /root/.bashrc > /dev/null
 ```
 ```bash
-sudo echo 'export EDITOR="/usr/bin/vim"' >> /root/.bashrc
+echo 'export EDITOR="/usr/bin/vim"' | sudo tee -a /root/.bashrc > /dev/null
 ```
 ```bash
 sudo cp ~/dotfiles/.vimrc /root/
