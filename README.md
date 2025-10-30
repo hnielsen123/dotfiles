@@ -98,11 +98,16 @@ cp -R dotfiles/.config .
 ### 3. Add the following to .zshrc / .bashrc
 
 
-#### Enable Vim keybinds in shell prompt (optional, I don't actually like this very much)
+#### Optional: Enable Vim keybinds in shell prompt (I don't actually like this very much)
 
-set -o vi [for bash]
+[for bash]
+```bash
+set -o vi
+```
 
-change `bindkey -e` to `bindkey -v` [for zsh]
+[for zsh]
+
+change `bindkey -e` to `bindkey -v`
 
 #### Best ls alias:
 ```bash
@@ -112,6 +117,11 @@ alias ls="ls -alhF --color=auto"
 #### Enable tmux color:
 ```bash
 alias tmux="TERM=xterm-256color tmux"
+```
+
+#### Optional: Alias for message of the day (Ubuntu only)
+```bash
+alias motd="cat /run/motd.dynamic"
 ```
 
 #### Add .local/bin to path
@@ -153,10 +163,29 @@ eval "$(zoxide init --cmd cd bash)"
 eval "$(zoxide init --cmd cd zsh)"
 ```
 
-Example full addition to .bashrc:
+#### Optional: auto-start tmux over SSH (last thing in .bashrc):
+```bash
+# prints MOTD because I like it
+if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+  motd_cmd='[ -r /run/motd.dynamic ] && cat /run/motd.dynamic; [ -r /etc/motd ] && cat /etc/motd'
+  tmux has-session -t 0 2>/dev/null \
+    && exec tmux attach -t 0 \
+    || exec tmux new -s 0 "$motd_cmd; echo; exec \$SHELL -l"
+fi
+
+# if you'd prefer no MOTD
+if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+  tmux has-session -t 0 2>/dev/null \
+    && exec tmux attach -t 0 \
+    || exec tmux new -s 0
+fi
+```
+
+#### Example full addition to .bashrc: (Ubuntu server)
 ```bash
 alias ls="ls -alhF --color=auto"
 alias tmux="TERM=xterm-256color tmux"
+alias motd="cat /run/motd.dynamic"
 
 export PATH=$PATH:$HOME/.local/bin
 export LESS="--mouse --wheel-lines=3"
@@ -164,6 +193,13 @@ export EDITOR="/usr/bin/vim"
 
 eval "$(starship init bash)" 
 eval "$(zoxide init --cmd cd bash)"
+
+if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+  motd_cmd='[ -r /run/motd.dynamic ] && cat /run/motd.dynamic; [ -r /etc/motd ] && cat /etc/motd'
+  tmux has-session -t 0 2>/dev/null \
+    && exec tmux attach -t 0 \
+    || exec tmux new -s 0 "$motd_cmd; echo; exec \$SHELL -l"
+fi
 ```
 
 #### Put changes into effect
@@ -175,7 +211,21 @@ source .bashrc
 [for zsh] 
 ```bash
 source .zshrc
-``` 
+```
+
+#### Nice to haves for root (for anytime you need to sudo su)
+```bash
+sudo echo 'alias ls="ls -alhF --color=auto"' >> /root/.bashrc
+```
+```bash
+sudo echo 'export LESS="--mouse --wheel-lines=3"' >> /root/.bashrc
+```
+```bash
+sudo echo 'export EDITOR="/usr/bin/vim"' >> /root/.bashrc
+```
+```bash
+sudo cp ~/dotfiles/.vimrc /root/
+```
 
 ### 4. Configure tmux
   
@@ -187,7 +237,7 @@ tmux
 tmux source .tmux.conf
 ```
 
-Ctrl+b, Shift+i to activate tpm and tmux plugins.
+`Ctrl+b`, `Shift+i` to activate tpm and tmux plugins.
 
 Comment out the "status left" part of `~/.tmux/plugins/tokyo-night-tmux/tokyo-night.tmux`, instead add
 ```bash
