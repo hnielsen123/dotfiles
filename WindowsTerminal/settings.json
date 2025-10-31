@@ -1,0 +1,141 @@
+{
+    "keybindings": 
+    [
+
+        {
+            "id": "User.nextTab.0",
+            "keys": "alt+2"
+        },
+        {
+            "id": "User.prevTab.0",
+            "keys": "alt+1"
+        },
+        {
+            "id": "User.prevTab.0",
+            "keys": "alt+q"
+        },
+        {
+            "id": "User.nextTab.0",
+            "keys": "alt+w"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "adjustIndistinguishableColors": "never",
+            "bellStyle": "none",
+            "colorScheme": "Powershell 7",
+            "cursorShape": "vintage",
+            "font": 
+            {
+                "cellHeight": "1.2",
+                "face": "CaskaydiaMono Nerd Font Mono",
+                "size": 11,
+                "weight": "normal"
+            },
+            "intenseTextStyle": "bright",
+            "opacity": 84
+        }
+    },
+    "schemes": 
+    [
+        {
+            "background": "#0C0C0C",
+            "black": "#0C0C0C",
+            "blue": "#7D1D00",
+            "brightBlack": "#767676",
+            "brightBlue": "#BFBB4D",
+            "brightCyan": "#61D6D6",
+            "brightGreen": "#16C60C",
+            "brightPurple": "#B4009E",
+            "brightRed": "#E74856",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#6E6EFF",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#19D6D2",
+            "foreground": "#F2F2F2",
+            "green": "#13A10E",
+            "name": "Powershell 5",
+            "purple": "#881798",
+            "red": "#C50F1F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#2F31FF"
+        },
+        {
+            "background": "#111217",
+            "black": "#1F2229",
+            "blue": "#367BF0",
+            "brightBlack": "#198388",
+            "brightBlue": "#277FFF",
+            "brightCyan": "#05A1F7",
+            "brightGreen": "#47D4B9",
+            "brightPurple": "#962AC3",
+            "brightRed": "#EC0101",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FF8A18",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#49AEE6",
+            "foreground": "#FFFFFF",
+            "green": "#5EBDAB",
+            "name": "Kali Dark",
+            "purple": "#9755B3",
+            "red": "#D41919",
+            "selectionBackground": "#FFFFFF",
+            "white": "#E6E6E6",
+            "yellow": "#FEA44C"
+        },
+        {
+            "background": "#111217",
+            "black": "#1F2229",
+            "blue": "#2452A1",
+            "brightBlack": "#198388",
+            "brightBlue": "#277FFF",
+            "brightCyan": "#05A1F7",
+            "brightGreen": "#2CA84E",
+            "brightPurple": "#962AC3",
+            "brightRed": "#EC0101",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F9F1A5",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#BCB6FF",
+            "foreground": "#F2F2F2",
+            "green": "#5EBDAB",
+            "name": "Powershell 7",
+            "purple": "#9755B3",
+            "red": "#D41919",
+            "selectionBackground": "#FFFFFF",
+            "white": "#E6E6E6",
+            "yellow": "#FF9632"
+        }
+    ],
+    "theme": "rose-pine",
+    "themes": 
+    [
+        {
+            "name": "rose-pine",
+            "tab": 
+            {
+                "background": "#191724FF",
+                "iconStyle": "default",
+                "showCloseButton": "always",
+                "unfocusedBackground": null
+            },
+            "tabRow": 
+            {
+                "background": "#26233AFF",
+                "unfocusedBackground": "#908CAAFF"
+            },
+            "window": 
+            {
+                "applicationTheme": "dark",
+                "experimental.rainbowFrame": false,
+                "frame": null,
+                "unfocusedFrame": null,
+                "useMica": false
+            }
+        }
+    ],
+    "windowingBehavior": "useNew"
+}
