@@ -12,7 +12,7 @@ format = """$os$username$hostname$kubernetes$directory$git_branch$git_status"""
 # ---
 
 [os]
-format = '[$symbol](bold white) '
+format = '[$symbol](bold bright-white) '
 disabled = false
 
 [os.symbols]
@@ -27,8 +27,8 @@ Kali = ''
 
 # Shows the username
 [username]
-style_user = 'white bold'
-style_root = 'black bold'
+style_user = 'bright-white bold'
+style_root = 'bright-black bold'
 format = '[$user]($style) '
 disabled = false
 show_always = true
@@ -36,7 +36,7 @@ show_always = true
 # Shows the hostname
 [hostname]
 ssh_only = false
-format = 'on [$hostname](bold cyan) '
+format = 'on [$hostname](bold bright-cyan) '
 disabled = false
 
 # Shows current directory
@@ -54,7 +54,7 @@ symbol = ' '
 format = 'via [$symbol$branch]($style)'
 # truncation_length = 4
 truncation_symbol = '…/'
-style = 'bold green'
+style = 'bold bright-green'
 
 # Shows current git status
 [git_status]
@@ -74,7 +74,7 @@ deleted = ' '
 
 # Shows kubernetes context and namespace
 [kubernetes]
-format = 'via [󱃾 $context\($namespace\)](bold purple) '
+format = 'via [󱃾 $context\($namespace\)](bold bright-purple) '
 disabled = false
 
 # ---
