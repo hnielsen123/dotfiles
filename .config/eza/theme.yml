@@ -1,0 +1,112 @@
+colourful: true
+
+filekinds:
+  normal: {foreground: "#f2f2f2", is_bold: false}
+  directory: {foreground: "#f2f2f2", is_bold: false}
+  symlink: {foreground: "#f2f2f2", is_bold: false}
+  pipe: {foreground: "#f2f2f2", is_bold: false}
+  block_device: {foreground: "#f2f2f2", is_bold: false}
+  char_device: {foreground: "#f2f2f2", is_bold: false}
+  socket: {foreground: "#f2f2f2", is_bold: false}
+  special: {foreground: "#f2f2f2", is_bold: false}
+  executable: {foreground: "#2ca84e", is_bold: false}
+  mount_point: {foreground: "#f2f2f2", is_bold: false}
+
+perms:
+  user_read: {foreground: "#f2f2f2", is_bold: false}
+  user_write: {foreground: "#f2f2f2", is_bold: false}
+  user_execute_file: {foreground: "#f2f2f2", is_bold: false, is_underline: true}
+  user_execute_other: {foreground: "#f2f2f2", is_bold: false}
+  group_read: {foreground: "#f2f2f2", is_bold: false}
+  group_write: {foreground: "#f2f2f2", is_bold: false}
+  group_execute: {foreground: "#f2f2f2", is_bold: false}
+  other_read: {foreground: "#f2f2f2", is_bold: false}
+  other_write: {foreground: "#f2f2f2", is_bold: false}
+  other_execute: {foreground: "#f2f2f2", is_bold: false}
+  special_user_file: {foreground: "#f2f2f2", is_bold: false}
+  special_other: {foreground: "#f2f2f2", is_bold: false}
+  attribute: {foreground: "#f2f2f2", is_bold: false}
+
+size:
+  major: {foreground: "#f2f2f2", is_bold: false}
+  minor: {foreground: "#f2f2f2", is_bold: false}
+  number_byte: {foreground: "#f2f2f2", is_bold: false}
+  number_kilo: {foreground: "#f2f2f2", is_bold: false}
+  number_mega: {foreground: "#f2f2f2", is_bold: false}
+  number_giga: {foreground: "#f2f2f2", is_bold: false}
+  number_huge: {foreground: "#f2f2f2", is_bold: false}
+  unit_byte: {foreground: "#f2f2f2", is_bold: false}
+  unit_kilo: {foreground: "#f2f2f2", is_bold: false}
+  unit_mega: {foreground: "#f2f2f2", is_bold: false}
+  unit_giga: {foreground: "#f2f2f2", is_bold: false}
+  unit_huge: {foreground: "#f2f2f2", is_bold: false}
+
+users:
+  user_you: {foreground: "#f2f2f2", is_bold: false}
+  user_root: {foreground: Red, is_bold: false}
+  user_other: {foreground: "#f2f2f2", is_bold: false}
+  group_yours: {foreground: "#f2f2f2", is_bold: false}
+  group_other: {foreground: "#f2f2f2", is_bold: false}
+  group_root: {foreground: "#f2f2f2", is_bold: false}
+
+links:
+  normal: {foreground: "#f2f2f2", is_bold: false}
+  multi_link_file: {foreground: "#f2f2f2", is_bold: false}
+
+git:
+  new: {foreground: "#f2f2f2", is_bold: false}
+  modified: {foreground: "#f2f2f2", is_bold: false}
+  deleted: {foreground: "#f2f2f2", is_bold: false}
+  renamed: {foreground: "#f2f2f2", is_bold: false}
+  typechange: {foreground: "#f2f2f2", is_bold: false}
+  ignored: {foreground: "#f2f2f2", is_bold: false, is_dimmed: true}
+  conflicted: {foreground: "#f2f2f2", is_bold: false}
+
+git_repo:
+  branch_main: {foreground: "#f2f2f2", is_bold: false}
+  branch_other: {foreground: "#f2f2f2", is_bold: false}
+  git_clean: {foreground: "#f2f2f2", is_bold: false}
+  git_dirty: {foreground: "#f2f2f2", is_bold: false}
+
+security_context:
+  colon: {foreground: "#f2f2f2", is_bold: false, is_dimmed: true}
+  user: {foreground: "#f2f2f2", is_bold: false}
+  role: {foreground: "#f2f2f2", is_bold: false}
+  typ: {foreground: "#f2f2f2", is_bold: false}
+  range: {foreground: "#f2f2f2", is_bold: false}
+
+file_type:
+  image: {foreground: "#f2f2f2", is_bold: false}
+  video: {foreground: "#f2f2f2", is_bold: false}
+  music: {foreground: "#f2f2f2", is_bold: false}
+  lossless: {foreground: "#f2f2f2", is_bold: false}
+  crypto: {foreground: "#f2f2f2", is_bold: false}
+  document: {foreground: "#f2f2f2", is_bold: false}
+  compressed: {foreground: "#f2f2f2", is_bold: false}
+  temp: {foreground: "#f2f2f2", is_bold: false}
+  compiled: {foreground: "#f9f1a5", is_bold: false}
+  build: {foreground: "#f9f1a5", is_bold: false}
+  source: {foreground: "#f9f1a5", is_bold: false}
+
+punctuation: {foreground: "#f2f2f2", is_bold: false}
+date: {foreground: "#f2f2f2", is_bold: false}
+inode: {foreground: "#f2f2f2", is_bold: false}
+blocks: {foreground: "#f2f2f2", is_bold: false}
+header: {foreground: "#f2f2f2", is_bold: false, is_underline: true}
+octal: {foreground: "#f2f2f2", is_bold: false}
+flags: {foreground: "#f2f2f2", is_bold: false}
+
+symlink_path: {foreground: "#f2f2f2", is_bold: false}
+control_char: {foreground: "#f2f2f2", is_bold: false}
+broken_symlink: {foreground: "#f2f2f2", is_bold: false}
+broken_path_overlay: {foreground: "#f2f2f2", is_bold: false, is_underline: true}
+
+filenames:
+  # Custom filename-based overrides
+  # Cargo.toml: {icon: {glyph: 🦀}}
+
+extensions:
+  # Custom extension-based overrides
+  # rs: {filename: {foreground: Red}, icon: {glyph: 🦀}}
+  exe: {filename: {foreground: "#2ca84e"}}
+  ps1: {filename: {foreground: "#f9f1a5"}}
