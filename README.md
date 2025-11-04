@@ -114,11 +114,6 @@ change `bindkey -e` to `bindkey -v`
 alias ls="ls -alhF --color=auto"
 ```
 
-#### Enable tmux color:
-```bash
-alias tmux="TERM=xterm-256color tmux"
-```
-
 #### Optional: Alias for message of the day (Ubuntu only)
 ```bash
 alias motd="cat /run/motd.dynamic"
@@ -191,7 +186,6 @@ fi
 #### Example full addition to .bashrc: (Ubuntu server)
 ```bash
 alias ls="ls -alhF --color=auto"
-alias tmux="TERM=xterm-256color tmux"
 alias motd="cat /run/motd.dynamic"
 
 export PATH=$PATH:$HOME/.local/bin
