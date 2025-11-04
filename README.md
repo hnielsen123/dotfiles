@@ -248,9 +248,36 @@ In `~/.tmux/plugins/tokyo-night-tmux/src/themes.sh`, go the the default/night th
 
 Exit tmux, then `tmux` to start a new session and make sure everything is initiated correctly
 
+### 5. Optional installs
 
+#### lsd - better ls
 
-
+Install on Debian-based:
+- Download installer (current link, check for newer release at https://github.com/lsd-rs/lsd/releases):
+```bash
+wget https://github.com/lsd-rs/lsd/releases/download/v1.2.0/lsd_1.2.0_amd64.deb
+```
+- Install
+```bash
+sudo dpkg -i ./lsd_1.2.0_amd64.deb
+```
+Install on Arch:
+```bash
+sudo pacman -S lsd
+```
+Configure:
+- Copy config from dotfile repo
+```bash
+cp -R ~/dotfiles/.config/lsd ~/.config
+```
+- Add aliases to .bashrc/.zshrc
+```bash
+alias ls='lsd -la'
+alias ll='lsd -l'
+alias lt='lsd -la --tree --depth 2'
+alias llt='lsd -l --tree --depth 2'
+```
+  
 
 
 
