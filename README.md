@@ -10,6 +10,8 @@ bat
 
 starship
 
+rg (ripgrep)
+
 ## Steps for install
 
 ### 1. Install NerdFont (for headless machines this is only necessary on the host, not the machine you're SSHing into)
@@ -57,7 +59,7 @@ Change in Windows Terminal -> Settings -> Defaults -> Font face to Caskaydia Ner
 ### 2. Install and configure binaries 
 
 ```bash
-sudo apt install bat fzf
+sudo apt install bat fzf ripgrep
 ```
 
 ```bash
@@ -277,4 +279,27 @@ alias ls='lsd -la'
 alias ll='lsd -l'
 alias lt='lsd -la --tree --depth 2'
 alias llt='lsd -l --tree --depth 2'
+```
+
+#### fd - better find
+
+Install on Ubuntu:
+- Download installer (current link, check for newer release at (https://github.com/sharkdp/fd/releases)
+```bash
+wget https://github.com/sharkdp/fd/releases/download/v10.3.0/fd_10.3.0_amd64.deb
+```
+- Install
+```bash
+sudo dpkg -i ./fd_10.3.0_amd64.deb
+```
+Install on Kali:
+```bash
+sudo apt install fd-find
+```
+```bash
+ln -s $(which fdfind) ~/.local/bin/fd
+```
+Install on Arch:
+```bash
+sudo pacman -S fd
 ```
