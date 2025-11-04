@@ -181,6 +181,13 @@ if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
 fi
 ```
 
+For local installations (VM/WSL2) where you still want to auto start tmux:
+```bash
+if [[ $- =~ i ]] && [[ -z "$TMUX" ]]; then
+        tmux attach-session -t 0 || tmux new-session -s 0
+fi
+```
+
 #### Example full addition to .bashrc: (Ubuntu server)
 ```bash
 alias ls="ls -alhF --color=auto"
@@ -277,10 +284,3 @@ alias ll='lsd -l'
 alias lt='lsd -la --tree --depth 2'
 alias llt='lsd -l --tree --depth 2'
 ```
-  
-
-
-
-
-
-
