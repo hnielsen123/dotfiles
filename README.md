@@ -247,6 +247,11 @@ Comment out the "status left" part of `~/.tmux/plugins/tokyo-night-tmux/tokyo-ni
 tmux set -g status-left "#[fg=${THEME[foreground]},bg=${THEME[black]}] #{?client_prefix,󰠠 ,#[dim]󰤂 }#[nodim]#(hostname) "
 ```
 
+Then, right below that, comment out the "window-status-current-format line, and instead add
+```bash
+tmux set -g window-status-current-format "$RESET#[fg=${THEME[foreground]},bg=${THEME[bblack]}] #{?#{==:#{pane_current_command},ssh},󰣀 ,$active_terminal_icon $window_space}#[fg=${THEME[foreground]},bold,nodim]$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#{?window_last_flag, , }"
+```
+
 In `~/.tmux/plugins/tokyo-night-tmux/src/themes.sh`, go the the default/night theme at the bottom and change `["foreground"]="#a9b1d6"` to `["foreground"]="#f2f2f2"`
 
 Exit tmux, then `tmux` to start a new session and make sure everything is initiated correctly
