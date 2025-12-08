@@ -128,7 +128,7 @@ export PATH=$PATH:$HOME/.local/bin
 
 #### Enable mouse scroll in less:
 ```bash
-export LESS="--mouse --wheel-lines=3"
+export LESS="-iRM --mouse --wheel-lines=3"
 ```
 
 #### Set vim as default editor:
