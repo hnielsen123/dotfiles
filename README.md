@@ -221,7 +221,7 @@ source .zshrc
 echo -e '\nalias ls="ls -alhF --color=auto"' | sudo tee -a /root/.bashrc > /dev/null
 ```
 ```bash
-echo -e '\nexport LESS="--mouse --wheel-lines=3"' | sudo tee -a /root/.bashrc > /dev/null
+echo -e '\nexport LESS="-iRM --mouse --wheel-lines=3"' | sudo tee -a /root/.bashrc > /dev/null
 ```
 ```bash
 echo 'export EDITOR="/usr/bin/vim"' | sudo tee -a /root/.bashrc > /dev/null
