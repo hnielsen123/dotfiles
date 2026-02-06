@@ -191,7 +191,7 @@ alias ls="ls -alhF --color=auto"
 alias motd="cat /run/motd.dynamic"
 
 export PATH=$PATH:$HOME/.local/bin
-export LESS="--mouse --wheel-lines=3"
+export LESS="-iRM --mouse --wheel-lines=3"
 export EDITOR="/usr/bin/vim"
 
 eval "$(starship init bash)" 
