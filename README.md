@@ -254,7 +254,7 @@ tmux set -g window-status-current-format "$RESET#[fg=${THEME[foreground]},bg=${T
 
 In `~/.tmux/plugins/tokyo-night-tmux/src/themes.sh`, go the the default/night theme at the bottom and change `["foreground"]="#a9b1d6"` to `["foreground"]="#f2f2f2"`
 
-Exit tmux, then `tmux` to start a new session and make sure everything is initiated correctly
+Exit tmux, then `tmux` to start a new session and make sure everything is initiated correctly (if you're using auto disconnect SSH on tmux detach, you'll need to `tmux source ~/.tmux.conf` instead)
 
 ### 5. Optional installs
 
@@ -267,7 +267,7 @@ wget https://github.com/lsd-rs/lsd/releases/download/v1.2.0/lsd_1.2.0_amd64.deb
 ```
 - Install
 ```bash
-sudo dpkg -i ./lsd_1.2.0_amd64.deb
+sudo apt install ./lsd_1.2.0_amd64.deb
 ```
 Install on Arch:
 ```bash
@@ -295,7 +295,7 @@ wget https://github.com/sharkdp/fd/releases/download/v10.3.0/fd_10.3.0_amd64.deb
 ```
 - Install
 ```bash
-sudo dpkg -i ./fd_10.3.0_amd64.deb
+sudo apt install ./fd_10.3.0_amd64.deb
 ```
 Install on Kali:
 ```bash
