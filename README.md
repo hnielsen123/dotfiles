@@ -162,19 +162,34 @@ eval "$(zoxide init --cmd cd zsh)"
 
 #### Optional: auto-start tmux over SSH (last thing in .bashrc):
 ```bash
+# by default this will end SSH session after detach, to detach without killing SSH add this alias
+alias detach-tmux='touch /tmp/.tmux-stay-$(id -u) && tmux detach'
+
 # prints MOTD because I like it
 if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+  _tmux_stay="/tmp/.tmux-stay-$(id -u)"
   motd_cmd='[ -r /run/motd.dynamic ] && cat /run/motd.dynamic; [ -r /etc/motd ] && cat /etc/motd'
   tmux has-session -t 0 2>/dev/null \
-    && exec tmux attach -t 0 \
-    || exec tmux new -s 0 "$motd_cmd; echo; exec \$SHELL -l"
+    && tmux attach -t 0 \
+    || tmux new -s 0 "$motd_cmd; echo; exec \$SHELL -l"
+  if [[ -f "$_tmux_stay" ]]; then
+    rm -f "$_tmux_stay"
+  else
+    exit
+  fi
 fi
 
 # if you'd prefer no MOTD
 if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+  _tmux_stay="/tmp/.tmux-stay-$(id -u)"
   tmux has-session -t 0 2>/dev/null \
-    && exec tmux attach -t 0 \
-    || exec tmux new -s 0
+    && tmux attach -t 0 \
+    || tmux new -s 0
+  if [[ -f "$_tmux_stay" ]]; then
+    rm -f "$_tmux_stay"
+  else
+    exit
+  fi
 fi
 ```
 
@@ -189,6 +204,7 @@ fi
 ```bash
 alias ls="ls -alhF --color=auto"
 alias motd="cat /run/motd.dynamic"
+alias detach-tmux='touch /tmp/.tmux-stay-$(id -u) && tmux detach'
 
 export PATH=$PATH:$HOME/.local/bin
 export LESS="-iRM --mouse --wheel-lines=3"
@@ -198,10 +214,16 @@ eval "$(starship init bash)"
 eval "$(zoxide init --cmd cd bash)"
 
 if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+  _tmux_stay="/tmp/.tmux-stay-$(id -u)"
   motd_cmd='[ -r /run/motd.dynamic ] && cat /run/motd.dynamic; [ -r /etc/motd ] && cat /etc/motd'
   tmux has-session -t 0 2>/dev/null \
-    && exec tmux attach -t 0 \
-    || exec tmux new -s 0 "$motd_cmd; echo; exec \$SHELL -l"
+    && tmux attach -t 0 \
+    || tmux new -s 0 "$motd_cmd; echo; exec \$SHELL -l"
+  if [[ -f "$_tmux_stay" ]]; then
+    rm -f "$_tmux_stay"
+  else
+    exit
+  fi
 fi
 ```
 
