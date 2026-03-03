@@ -209,6 +209,11 @@ fi
 
 #### Example full addition to .bashrc: (Ubuntu server)
 ```bash
+set_terminal_title() {
+        echo -ne "\033]0;$(hostname -s)\a"
+}
+PROMPT_COMMAND="set_terminal_title${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
+
 alias ls="ls -alhF --color=auto"
 alias motd="cat /run/motd.dynamic"
 alias detach-tmux='touch /tmp/.tmux-stay-$(id -u) && tmux detach'
