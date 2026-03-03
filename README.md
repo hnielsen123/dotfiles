@@ -99,6 +99,13 @@ cp -R dotfiles/.config .
 
 ### 3. Add the following to .zshrc / .bashrc
 
+#### Enable hostname terminal title (compatible with starship)
+```bash
+set_terminal_title() {
+        echo -ne "\033]0;$(hostname -s)\a"
+}
+PROMPT_COMMAND="set_terminal_title${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
+```
 
 #### Optional: Enable Vim keybinds in shell prompt (I don't actually like this very much)
 
