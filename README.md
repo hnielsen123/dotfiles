@@ -99,7 +99,7 @@ cp -R dotfiles/.config .
 
 ### 3. Add the following to .zshrc / .bashrc
 
-#### Enable hostname terminal title (compatible with starship)
+#### [Not needed with tmux] Enable hostname terminal title (compatible with starship)
 ```bash
 set_terminal_title() {
         echo -ne "\033]0;$(hostname -s)\a"
@@ -144,6 +144,10 @@ export EDITOR="/usr/bin/vim"
 ```
 [may need to double check path based on distro]
 
+#### Enable Nerd Font compatibility with less and bat
+```bash
+export LESSUTFCHARDEF=e000-f8ff:p,f0001-fffff:p
+```
 
 #### Init starship
 [for bash]
