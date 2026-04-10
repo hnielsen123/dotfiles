@@ -138,16 +138,16 @@ export PATH=$PATH:$HOME/.local/bin
 export LESS="-iRM --mouse --wheel-lines=3"
 ```
 
+#### Enable Nerd Font compatibility with less and bat
+```bash
+export LESSUTFCHARDEF=e000-f8ff:p,f0001-fffff:p
+```
+
 #### Set vim as default editor:
 ```bash
 export EDITOR="/usr/bin/vim"
 ```
 [may need to double check path based on distro]
-
-#### Enable Nerd Font compatibility with less and bat
-```bash
-export LESSUTFCHARDEF=e000-f8ff:p,f0001-fffff:p
-```
 
 #### Init starship
 [for bash]
@@ -280,17 +280,6 @@ tmux source .tmux.conf
 
 `Ctrl+b`, `Shift+i` to activate tpm and tmux plugins.
 
-Comment out the "status left" part of `~/.tmux/plugins/tokyo-night-tmux/tokyo-night.tmux`, instead add
-```bash
-tmux set -g status-left "#[fg=${THEME[foreground]},bg=${THEME[black]}] #{?client_prefix,󰠠 ,#[dim]󰤂 }#[nodim]#(hostname) "
-```
-
-Then, right below that, comment out the "window-status-current-format line, and instead add
-```bash
-tmux set -g window-status-current-format "$RESET#[fg=${THEME[foreground]},bg=${THEME[bblack]}] #{?#{==:#{pane_current_command},ssh},󰣀 ,$active_terminal_icon $window_space}#[fg=${THEME[foreground]},bold,nodim]$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#{?window_last_flag, , }"
-```
-
-In `~/.tmux/plugins/tokyo-night-tmux/src/themes.sh`, go the the default/night theme at the bottom and change `["foreground"]="#a9b1d6"` to `["foreground"]="#f2f2f2"`
 
 Exit tmux, then `tmux` to start a new session and make sure everything is initiated correctly (if you're using auto disconnect SSH on tmux detach, you'll need to `tmux source ~/.tmux.conf` instead)
 
