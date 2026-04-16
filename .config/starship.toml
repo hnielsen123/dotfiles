@@ -39,7 +39,9 @@ show_always = true
 # Shows the hostname
 [hostname]
 ssh_only = false
+ssh_symbol = '󰣀 '
 format = 'on [$hostname](bold bright-cyan) '
+#format = 'on [$ssh_symbol$hostname](bold bright-cyan) '
 disabled = false
 
 # Shows current directory
