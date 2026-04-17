@@ -2,15 +2,15 @@
 
 add_newline = false
 command_timeout = 1000
-format = """$os$username$hostname$kubernetes$directory$git_branch$git_status"""
+#format = """$os$username$hostname$kubernetes$directory$git_branch$git_status"""
 
-#format = """$os$username$hostname$kubernetes$directory$git_branch$git_status
-#$character"""
+format = """$os$username$hostname$kubernetes$directory$git_branch$git_status
+$character"""
 
 # Drop ugly default prompt characters
-#[character]
-#success_symbol = '[❯](bold bright-white)'
-#error_symbol = '[❯](bold bright-red)'
+[character]
+success_symbol = '[❯](bold bright-white)'
+error_symbol = '[❯](bold bright-white)'
 
 # ---
 
@@ -40,16 +40,17 @@ show_always = true
 [hostname]
 ssh_only = false
 ssh_symbol = '󰣀 '
-format = 'on [$hostname](bold bright-cyan) '
-#format = 'on [$ssh_symbol$hostname](bold bright-cyan) '
+#format = 'on [$hostname](bold bright-cyan) '
+format = 'on [$ssh_symbol$hostname](bold bright-blue) '
 disabled = false
 
 # Shows current directory
 [directory]
-truncation_length = 2
-#truncation_length = 7
+#truncation_length = 2
+truncation_length = 7
 truncation_symbol = '…/'
 home_symbol = '󰋜 ~'
+style = 'bold bright-blue'
 read_only_style = '197'
 read_only = '  '
 format = 'at [$path]($style)[$read_only]($read_only_style) '
