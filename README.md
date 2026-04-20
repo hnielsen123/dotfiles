@@ -267,6 +267,12 @@ echo 'export EDITOR="/usr/bin/vim"' | sudo tee -a /root/.bashrc > /dev/null
 ```bash
 sudo cp ~/dotfiles/.vimrc /root/
 ```
+##### Preserve EDITOR and LESS environment variables when using sudo
+```bash
+sudo EDITOR=/usr/bin/vim visudo -f /etc/sudoers.d/username
+# add:
+Defaults:username env_keep += "LESS EDITOR"
+```
 
 ### 4. Configure tmux
   
