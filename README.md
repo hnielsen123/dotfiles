@@ -267,8 +267,10 @@ echo 'export EDITOR="/usr/bin/vim"' | sudo tee -a /root/.bashrc > /dev/null
 ```bash
 sudo cp ~/dotfiles/.vimrc /root/
 ```
-##### Preserve EDITOR and LESS environment variables when using sudo
+
+#### Preserve EDITOR and LESS environment variables when using sudo
 ```bash
+# no dots (.) or tildes (~) allowed in filename, if username contains either character, swap it for an underscore (_)
 sudo EDITOR=/usr/bin/vim visudo -f /etc/sudoers.d/username
 # add:
 Defaults:username env_keep += "LESS EDITOR"
