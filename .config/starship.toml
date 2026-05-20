@@ -39,21 +39,24 @@ show_always = true
 # Shows the hostname
 [hostname]
 ssh_only = false
-ssh_symbol = '󰣀 '
+#ssh_symbol = '󰣀 '
 #format = 'on [$hostname](bold bright-cyan) '
 format = 'on [$hostname](bold bright-blue) '
 disabled = false
 
 # Shows current directory
 [directory]
-#truncation_length = 2
 truncation_length = 7
 truncation_symbol = '…/'
+truncate_to_repo = false
 home_symbol = '󰋜 ~'
 style = 'bold bright-blue'
 read_only_style = '197'
 read_only = '  '
+repo_root_style = 'bold bright-green'
+before_repo_root_style = 'bold bright-green'
 format = 'at [$path]($style)[$read_only]($read_only_style) '
+repo_root_format = '[$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
 
 # Shows current git branch
 [git_branch]
