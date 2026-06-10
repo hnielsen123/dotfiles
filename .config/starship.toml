@@ -88,6 +88,11 @@ deleted = ' '
 format = 'via [󱃾 $context\($namespace\)](bold bright-purple) '
 disabled = false
 
+# Show any active python venv
+[python]
+disabled = false
+format = 'via [${symbol}$virtualenv]($style)'
+
 # ---
 
 [vagrant]
@@ -97,9 +102,6 @@ disabled = true
 disabled = true
 
 [helm]
-disabled = true
-
-[python]
 disabled = true
 
 [nodejs]
