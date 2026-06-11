@@ -57,7 +57,7 @@ read_only = '  '
 repo_root_style = 'bold bright-green'
 before_repo_root_style = 'bold bright-green'
 format = 'at [$path]($style)[$read_only]($read_only_style) '
-repo_root_format = '[$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
+repo_root_format = 'at [$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
 
 # Shows current git branch
 [git_branch]
@@ -92,6 +92,7 @@ disabled = false
 [python]
 disabled = false
 format = 'via [${symbol}$virtualenv]($style)'
+detect_extensions = []
 
 # ---
 
