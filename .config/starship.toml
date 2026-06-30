@@ -93,6 +93,7 @@ disabled = false
 disabled = false
 format = 'via [${symbol}$virtualenv]($style)'
 detect_extensions = []
+detect_files = []
 
 # ---
 
