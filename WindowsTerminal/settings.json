@@ -102,13 +102,37 @@
             "cyan": "#BCB6FF",
             "foreground": "#F2F2F2",
             "green": "#5EBDAB",
-            "name": "Powershell 7",
+            "name": "Powershell 7 (H)",
+            "purple": "#9755B3",
+            "red": "#D41919",
+            "selectionBackground": "#FFFFFF",
+            "white": "#E6E6E6",
+            "yellow": "#FF9632"
+        },
+		{
+            "background": "#111217",
+            "black": "#1F2229",
+            "blue": "#2452A1",
+            "brightBlack": "#198388",
+            "brightBlue": "#277FFF",
+            "brightCyan": "#05A1F7",
+            "brightGreen": "#2CA84E",
+            "brightPurple": "#962AC3",
+            "brightRed": "#EC0101",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F9F1A5",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#49AEE6",
+            "foreground": "#F2F2F2",
+            "green": "#5EBDAB",
+            "name": "Powershell 7 (H) + Kali Blend",
             "purple": "#9755B3",
             "red": "#D41919",
             "selectionBackground": "#FFFFFF",
             "white": "#E6E6E6",
             "yellow": "#FF9632"
         }
+
     ],
     "theme": "rose-pine",
     "themes": 
